@@ -101,7 +101,7 @@ Merged:
 
 #### Distribution of Years
 
-In univariate analysis, I first analyze the distribution of the years when recipes were submitted. Before plotting, I extracted the year from the submitted datetime column and assigned it to a new column named year. 
+In univariate analysis, I first analyze the distribution of the years when recipes were submitted. Before plotting, I extracted the year from the submitted datetime column and assigned it to a new column named `year`. 
 
 <iframe src="assets/fig1.html" width=800 height=600 frameBorder=0></iframe>
 
