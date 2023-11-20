@@ -175,9 +175,9 @@ I noticed there were a lot of missing values in the rating column and tested to 
 
 #### 1. Rating and Minutes (MCAR)
 
-Null Hypothesis: The missingness of average ratings is not dependent on minutes
+Null Hypothesis: The missingness of ratings is not dependent on minutes
 
-Alternative Hypothesis: The missingness of average ratings is dependent on minutes
+Alternative Hypothesis: The missingness of ratings is dependent on minutes
 
 I shuffled the `rating` column for permutation. Since `minutes` is a numeric variable, I used the absolute mean difference of `minutes` when `rating` is missing or not missing as the test statistic. 
 
