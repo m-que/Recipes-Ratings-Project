@@ -201,7 +201,7 @@ Similar to the previous test, I shuffled the `rating` column for permutation. Si
 
 <iframe src="assets/fig9.html" width=800 height=600 frameBorder=0></iframe>
 
-From the distribution, we notice that there is a slight difference in the distributions when the rating is missing and when it is not. The distribution when the rating is missing is slightly to the right of the distribution when the rating is not missing. For further analysis, I ran a permutation test on the columns.
+From the distribution, we notice that there is a slight difference in the distributions of calories when the rating is missing and when it is not. The distribution when the rating is missing is slightly to the right of the distribution when the rating is not missing. For further analysis, I ran a permutation test on the columns.
 
 <iframe src="assets/fig10.html" width=800 height=600 frameBorder=0></iframe>
 
