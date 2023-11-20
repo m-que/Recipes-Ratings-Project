@@ -189,7 +189,7 @@ From the distribution, it can be seen that both distributions look quite similar
 
 <iframe src="assets/fig8.html" width=800 height=600 frameBorder=0></iframe>
 
-The graph above shows the empirical distribution of the test statistic with 1000 permutations with the red line representing the observed test statistic. From the permutation test, I calculated the p-value to be 0.116, which is greater than the significance level of 5%, so we failed to reject the null hypothesis. Based on our results, it appears that the missingness of `rating` does not depend on the `minutes` column, so the missingness of `rating` is MCAR.
+The graph above shows the empirical distribution of the test statistic with 1000 permutations with the red line representing the observed test statistic. From the permutation test, I calculated the p-value to be 0.124, which is greater than the significance level of 5%, so we failed to reject the null hypothesis. Based on our results, it appears that the missingness of `rating` does not depend on the `minutes` column, so the missingness of `rating` is MCAR.
 
 #### 2. Rating and Calories (MAR)
 
@@ -219,10 +219,10 @@ The research question I am investigating is if there is a relationship between r
 
 I chose to use only minutes that are less than and equal to 200 to remove extreme outliers that may impact the observational statistics. I also used the minutes column to make a new column named slow, which is true if the number of minutes is greater than 60 (one hour), and false if the number of minutes is less than or equal to 60. 
 
-|   minutes |   avg_rating |
-|----------:|-------------:|
-|   29.1694 |      4.62931 |
-|  370.846  |      4.61345 |
+| slow   |   minutes |   avg_rating |
+|:-------|----------:|-------------:|
+| False  |   29.1694 |      4.62931 |
+| True   |  370.846  |      4.61345 |
 
 Since I am measuring how different two numerical distributions are (average rating for fast and slow recipes), the test statistic I used is the difference in group means (mean rating of fast recipes - mean rating of slow recipes). I chose to use the significance level of 5% to ensure the accuracy of the conclusion. 
 
@@ -232,4 +232,4 @@ The observed difference in means was calculated to be 0.015854362618372697.
 
 <iframe src="assets/fig11.html" width=800 height=600 frameBorder=0></iframe>
 
-The plot shows the empirical distribution of the test statistics in 1000 permutations, with the red line indicating observed test statistics on the far right of the distribution. I calculated the p-value to be 0.003, which is less than the significance level of 0.05. Therefore, we reject the null hypothesis. From the test conducted, it can be concluded that the observed data in the dataset shows evidence against the null hypothesis that the differences in the distributions of average ratings in fast and slow recipes are due to random chance. This result is reasonable since the recipes that take a longer time can be more complex and people may be more likely to mess up at cooking the dish. Moreover, people want their food fast and may become impatient for waiting a long time for the recipe, which can lead to giving a lower rating to the recipe. People are also more likely to try recipes that are faster and more time-efficient to make, which can contribute to the higher ratings of faster recipes.
+The plot shows the empirical distribution of the test statistics in 1000 permutations, with the red line indicating observed test statistics on the far right of the distribution. I calculated the p-value to be 0.001, which is less than the significance level of 0.05. Therefore, we reject the null hypothesis. From the test conducted, it can be concluded that the observed data in the dataset shows evidence against the null hypothesis that the differences in the distributions of average ratings in fast and slow recipes are due to random chance. This result is reasonable since the recipes that take a longer time can be more complex and people may be more likely to mess up at cooking the dish. Moreover, people want their food fast and may become impatient for waiting a long time for the recipe, which can lead to giving a lower rating to the recipe. People are also more likely to try recipes that are faster and more time-efficient to make, which can contribute to the higher ratings of faster recipes.
