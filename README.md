@@ -52,23 +52,23 @@ Understanding the possible correlation behind features in a recipe can provide v
 
 Before conducting analysis, I first cleaned the data to increase the readability and accuracy of the data.
 
-> 1. Converting Columns to Correct types
+> Converting Columns to Correct types
 
 Upon checking the type of each column in the dataframe, I noticed that the columns tags, nutrition, steps, and ingredients, contain values that look like lists but are actually strings that look like lists. I converted these columns into lists of strings to eliminate the confusion as well as make it easier to access in the future if needed. I also converted the `submitted` column into datetime data type so I could examine the trend of some features over time later.
 
-> 2. Seperating `nutrition` into Individual Columns
+> Seperating `nutrition` into Individual Columns
 
 After converting the strings into lists, I found that the list in the nutrition column contains information in the form of `'calories', 'total fat (PDV)', 'sugar (PDV)', 'sodium (PDV)', 'protein (PDV)', 'saturated fat (PDV)', 'carbohydrates (PDV)'`. I created an individual column for each of the unique nutrients in the list and converted each value to float data type so it is more convenient for future calculation.
 
-> 3. Left Merge Recipe and Ratings datasets together
+> Left Merge Recipe and Ratings datasets together
 
 I merge the two dataframes together based on their common column, `id` and `recipe_id`, so that the recipes are matched with their corresponding rating to make comparison easier.
 
-> 4. Fill all Ratings of 0 with np.nan
+> Fill all Ratings of 0 with np.nan
 
 Since ratings usually range from 1 to 5, a rating of 0 is not typically viewed as a valid rating and is likely to be a default value for missing ratings. To correctly indicate that 0 indicates a missing value in atings, I fill such values with np.nan instead.
 
-> 5. Creating Average Rating per Recipe Column
+> Creating Average Rating per Recipe Column
 
 Since this project focuses on examining the ratings of recipes, I made a new series calculating the average rating for the recipe and then added it into the dataframe as a column, naming it `avg_rating`.
 
@@ -87,13 +87,12 @@ Cleaned:
 
 Merged:
 
-|     id | name                                 |   minutes |   user_id | date       |   rating | review                                                                                                                                                                                                                                                                                                                                           |
-|-------:|:-------------------------------------|----------:|----------:|:-----------|---------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 333281 | 1 brownies in the world    best ever |        40 |    386585 | 2008-11-19 |        4 | These were pretty good, but took forever to bake.  I would send it ended up being almost an hour!  Even then, the brownies stuck to the foil, and were on the overly moist side and not easy to cut.  They did taste quite rich, though!  Made for My 3 Chefs.                                                                                   |
-| 453467 | 1 in canada chocolate chip cookies   |        45 |    424680 | 2012-01-26 |        5 | Originally I was gonna cut the recipe in half (just the 2 of us here), but then we had a park-wide yard sale, & I made the whole batch & used them as enticements for potential buyers ~ what the hey, a free cookie as delicious as these are, definitely works its magic! Will be making these again, for sure! Thanks for posting the recipe! |
-| 306168 | 412 broccoli casserole               |        40 |     29782 | 2008-12-31 |        5 | This was one of the best broccoli casseroles that I have ever made.  I made my own chicken soup for this recipe. I was a bit worried about the tsp of soy sauce but it gave the casserole the best flavor. YUM!                                                                                                                                  |
-|        |                                      |           |           |            |          | The photos you took (shapeweaver) inspired me to make this recipe and it actually does look just like them when it comes out of the oven.                                                                                                                                                                                                        |
-|        |                                      |           |           |            |          | Thanks so much for sharing your recipe shapeweaver. It was wonderful!  Going into my family's favorite Zaar cookbook :)                                                                                                                                                                                                                          |
+|     id | name                                 |   minutes | submitted   |   user_id | date       |   rating | review                                                                                                                                                                                                                                                                                                                                           |
+|-------:|:-------------------------------------|----------:|:------------|----------:|:-----------|---------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 333281 | 1 brownies in the world    best ever |        40 | 2008-10-27  |    386585 | 2008-11-19 |        4 | These were pretty good, but took forever to bake.  I would send it ended up being almost an hour!  Even then, the brownies stuck to the foil, and were on the overly moist side and not easy to cut.  They did taste quite rich, though!  Made for My 3 Chefs.                                                                                   |
+| 453467 | 1 in canada chocolate chip cookies   |        45 | 2011-04-11  |    424680 | 2012-01-26 |        5 | Originally I was gonna cut the recipe in half (just the 2 of us here), but then we had a park-wide yard sale, & I made the whole batch & used them as enticements for potential buyers ~ what the hey, a free cookie as delicious as these are, definitely works its magic! Will be making these again, for sure! Thanks for posting the recipe! |
+| 306168 | 412 broccoli casserole               |        40 | 2008-05-30  |     29782 | 2008-12-31 |        5 | This was one of the best broccoli casseroles that I have ever made.  I made my own chicken soup for this recipe. I was a bit worried about the tsp of soy sauce but it gave the casserole the best flavor. YUM!                                                                                                                                  |
+
 
 ---
 ## EDA
