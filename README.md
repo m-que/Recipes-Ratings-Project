@@ -113,7 +113,7 @@ Then, I examined the distribution of preparation time of recipes in the dataset.
 
 <iframe src="assets/fig2.html" width=800 height=600 frameBorder=0></iframe>
 
-Even without the outliers, one can see that there is a large right skew, which indicates that most of the recipes have a lower proportion of time. In addition, one can see that most recipes have minutes that are a multiple of 5, which may be due to recipe contributors being more likely to input an estimated recipe preparation time rather than the exact time. The graph is centered around 30, meaning most recipes have a preparation time of 30 minutes. 
+Even without the outliers, one can see that there is a large right skew, which indicates that most recipes take a short amount of time as opposed to a long amount of time. In addition, one can see that most recipes have minutes that are a multiple of 5, which may be due to recipe contributors being more likely to input an estimated recipe preparation time rather than the exact time. The graph is centered around 30, meaning most recipes have a preparation time of 30 minutes. 
 
 ### Bivariate Analysis
 
@@ -224,7 +224,7 @@ I chose to use only minutes that are less than and equal to 200 to remove extrem
 | False  |   29.1694 |      4.62931 |
 | True   |  370.846  |      4.61345 |
 
-Since I am measuring how different two numerical distributions are (average rating for fast and slow recipes), the test statistic I used is the difference in group means (mean rating of fast recipes - mean rating of slow recipes). I chose to use the significance level of 5% to ensure the accuracy of the conclusion. 
+Since I am measuring how different two numerical distributions are (average rating for fast and slow recipes), the test statistic I used is the difference in group means (mean rating of fast recipes - mean rating of slow recipes). I chose to use the significance level of 5% to increase accuracy of the randomized test result. 
 
 The observed difference in means was calculated to be 0.015854362618372697.
 
@@ -232,4 +232,4 @@ The observed difference in means was calculated to be 0.015854362618372697.
 
 <iframe src="assets/fig11.html" width=800 height=600 frameBorder=0></iframe>
 
-The plot shows the empirical distribution of the test statistics in 1000 permutations, with the red line indicating observed test statistics on the far right of the distribution. I calculated the p-value to be 0.001, which is less than the significance level of 0.05. Therefore, we reject the null hypothesis. From the test conducted, it can be concluded that the observed data in the dataset shows evidence against the null hypothesis that the differences in the distributions of average ratings in fast and slow recipes are due to random chance. This result is reasonable since the recipes that take a longer time can be more complex and people may be more likely to mess up at cooking the dish. Moreover, people want their food fast and may become impatient for waiting a long time for the recipe, which can lead to giving a lower rating to the recipe. People are also more likely to try recipes that are faster and more time-efficient to make, which can contribute to the higher ratings of faster recipes.
+The plot shows the empirical distribution of the test statistics in 1000 permutations, with the red line indicating observed test statistics on the far right of the distribution. I calculated the p-value to be 0.001, which is less than the significance level of 0.05. Therefore, we reject the null hypothesis. From the test conducted, it can be concluded that the observed data in the dataset shows evidence against the null hypothesis that the differences in the distributions of average ratings in fast and slow recipes are due to random chance. This result is reasonable since the recipes that take a longer time can be more complex and people may be more likely to mess up at cooking the dish. Moreover, people want their food fast and may become impatient for waiting a long time for the recipe, which can lead to giving a lower rating to the recipe. Furthermore, people who are busy are also more likely to try recipes that are faster and more time-efficient to make, which can contribute to the higher ratings of faster recipes.
