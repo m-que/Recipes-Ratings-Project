@@ -210,14 +210,14 @@ The plot shows the empirical distribution of the test statistic in 100 permutati
 ---
 ## Hypothesis Testing
 
-The research question I am investigating is if there is a relationship between recipe time and ratings. In other words, do recipes with higher time efficiency (less cooking time) have higher ratings? Since recipes that take less cooking time are generally faster and simpler to make, people would be more likely to give the recipe a higher rating. Therefore, I will be conducting a one-sided test to examine if the relationship between minutes and rating is truly significant, or just due to random chance. I used a permutation test on the distribution of ratings on recipes with longer preparation times and shorter preparation times to see whether ratings actually change or not.
+The research question I am investigating is if there is a relationship between recipe time and ratings. In other words, do recipes with higher time efficiency (less cooking time) have higher ratings? Since recipes that take less cooking time are generally faster and simpler to make, people would be more likely to give the recipe a higher rating. Therefore, I will be conducting a one-sided test to examine if the relationship between `minutes` and `rating` is truly significant, or just due to random chance. I used a permutation test on the distribution of ratings on recipes with longer preparation times and shorter preparation times to see whether ratings actually change or not.
 
 
 **Null Hypothesis**: The ratings in fast recipes and slow recipes have the same distribution, and the observed differences are due to random chance.
 
 **Alternative Hypothesis**: The less time it takes to make a recipe, the higher the rating is. The observed difference cannot be explained by random chance alone. 
 
-I chose to use only minutes that are less than and equal to 200 to remove extreme outliers that may impact the observational statistics. I also used the minutes column to make a new column named slow, which is true if the number of minutes is greater than 60 (one hour), and false if the number of minutes is less than or equal to 60. 
+I chose to use only minutes that are less than and equal to 200 to remove extreme outliers that may impact the observational statistics. I also used the `minutes` column to make a new column `slow`, which is true if the number of minutes is greater than 60 (one hour), and false if the number of minutes is less than or equal to 60. 
 
 | slow   |   minutes |   avg_rating |
 |:-------|----------:|-------------:|
