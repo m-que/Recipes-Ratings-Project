@@ -27,7 +27,7 @@ The dataset for recipes contains 83782 recipes from 2008 to 2018 on food.com. It
 |`'steps'`	              |Text for recipe steps, in order|
 |`'description'`	     | User-provided description|
 
-For this project, I added an additional column representing average ratings for each recipe in the dataframe to facilitate the analysis of different features of the recipe with their ratings.
+For this project, I added an additional column representing average ratings corresponding to each recipe in this dataframe to facilitate analysis.
 
 The dataset for ratings contain 731927 rows, each with a review on a recipe. It contains the 5 columns listed below.
 
@@ -52,21 +52,21 @@ Understanding the possible correlation behind features in a recipe can provide v
 
 Before conducting analysis, I first cleaned the data to increase the readability and accuracy of the data.
 
-> Converting Columns to Correct types
+> Converting Columns to Correct Types
 
-Upon checking the type of each column in the dataframe, I noticed that the columns tags, nutrition, steps, and ingredients, contain values that look like lists but are actually strings that look like lists. I converted these columns into lists of strings to eliminate the confusion as well as make it easier to access in the future if needed. I also converted the `submitted` column into datetime data type so I could examine the trend of some features over time later.
+Upon checking the type of each column in the dataframe, I noticed that the columns `tags`, `nutrition`, `steps`, and `ingredients` contain values that look like lists but are actually strings that look like lists. I converted these columns into lists of strings to eliminate the confusion as well as make it easier to access in the future if needed. I also converted the `submitted` column into datetime data type so I could examine the trend of features over time later.
 
 > Seperating `nutrition` into Individual Columns
 
 After converting the strings into lists, I found that the list in the nutrition column contains information in the form of `'calories', 'total fat (PDV)', 'sugar (PDV)', 'sodium (PDV)', 'protein (PDV)', 'saturated fat (PDV)', 'carbohydrates (PDV)'`. I created an individual column for each of the unique nutrients in the list and converted each value to float data type so it is more convenient for future calculation.
 
-> Left Merge Recipe and Ratings datasets together
+> Left Merge Recipe and Ratings Datasets Together
 
 I merge the two dataframes together based on their common column, `id` and `recipe_id`, so that the recipes are matched with their corresponding rating to make comparison easier.
 
 > Fill all Ratings of 0 with np.nan
 
-Since ratings usually range from 1 to 5, a rating of 0 is not typically viewed as a valid rating and is likely to be a default value for missing ratings. To correctly indicate that 0 indicates a missing value in atings, I fill such values with np.nan instead.
+Since ratings usually range from 1 to 5, a rating of 0 is not typically viewed as a valid rating and is likely to be a default value for missing ratings. To correctly indicate that 0 indicates a missing value in atings, I filled such values with np.nan instead.
 
 > Creating Average Rating per Recipe Column
 
