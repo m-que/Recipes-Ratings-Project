@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-This is a data science project investigating the relationship between cooking time and recipe success. The dataset used is originally scrapped and used by authors of [this source](https://cseweb.ucsd.edu/~jmcauley/pdfs/emnlp19c.pdf). This project is for DSC80 at UCSD. This is a project for the course DSC80 at UCSD. 
+This is a data science project investigating the relationship between cooking time and recipe success. The dataset used is originally scrapped and used by authors of [this source](https://cseweb.ucsd.edu/~jmcauley/pdfs/emnlp19c.pdf).
 
 ---
 
