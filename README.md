@@ -4,6 +4,8 @@
 
 ## Project Overview
 
+[View page here](https://m-que.github.io/Recipes-Ratings-Project/)
+
 This is a data science project investigating the relationship between cooking time and recipe success. The dataset used is originally scrapped and used by authors of [this source](https://cseweb.ucsd.edu/~jmcauley/pdfs/emnlp19c.pdf).
 
 ---
